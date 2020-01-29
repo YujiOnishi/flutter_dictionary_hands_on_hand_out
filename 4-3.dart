@@ -9,12 +9,16 @@ class DrawerMenu extends StatelessWidget {
       child: ListView(
         //childrenはWidget型の配列
         children: <Widget>[
+        
+//////////////////////////////////////////////
           //③Userアカウント
           //マジックストリングスはよしなに変更可能
           UserAccountsDrawerHeader(
             accountName: Text('お問い合わせは以下まで'),
             accountEmail: Text('freelancer@y-onishi.net'),
           ),
+//////////////////////////////////////////////
+
         ],
       ),
     );

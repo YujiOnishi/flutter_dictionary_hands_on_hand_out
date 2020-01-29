@@ -21,6 +21,8 @@ class DrawerMenu extends StatelessWidget {
           //マジックストリングスはよしなに変更可能
           ListTile(
             title: Text('ワード一覧'),
+            
+//////////////////////////////////////////////
             //⑤Tapイベント時の挙動
             onTap: () {
               //画面遷移の設定
@@ -31,6 +33,8 @@ class DrawerMenu extends StatelessWidget {
                 ),
               );
             },
+//////////////////////////////////////////////
+
           ),
         ],
       ),

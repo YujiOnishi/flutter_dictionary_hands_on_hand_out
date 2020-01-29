@@ -53,7 +53,7 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
         children: tabs.map(
           (Tab tab) {
             //⑧tabsのテキストが入ってくるはずなので確認
-             Text(tab.text);
+             return Text(tab.text);
           },
         ).toList(),
       ),

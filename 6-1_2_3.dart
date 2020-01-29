@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+
+//////////////////////////////////////////////
 //①firestoreインポート
 import 'package:cloud_firestore/cloud_firestore.dart';
+//////////////////////////////////////////////
 
 class FormData {
   String type = "en";
@@ -15,11 +18,15 @@ class InputForm extends StatefulWidget {
 }
 
 class MyInputFormState extends State<InputForm> {
+
+  //////////////////////////////////////////////
   //②firestore用にリファレンス用意
   DocumentReference mainReference =
       Firestore.instance.collection('dictionary').document();
   //③form用のkeyを用意
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  //////////////////////////////////////////////
+  
   FormData data = FormData();
 
   @override

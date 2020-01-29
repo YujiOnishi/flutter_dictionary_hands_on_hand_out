@@ -15,11 +15,15 @@ class DrawerMenu extends StatelessWidget {
             accountName: Text('お問い合わせは以下まで'),
             accountEmail: Text('freelancer@y-onishi.net'),
           ),
+          
+//////////////////////////////////////////////
           //④メニュー用のリストタイル
           //マジックストリングスはよしなに変更可能
           ListTile(
             title: Text('ワード一覧'),
           ),
+//////////////////////////////////////////////
+          
         ],
       ),
     );

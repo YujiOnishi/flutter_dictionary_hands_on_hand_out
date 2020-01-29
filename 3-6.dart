@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import '../widget/drawer_menu.dart';
+
+//////////////////////////////////////////////
+drawermenu用(エラー出して存在周知のためにコメント外してます実装時は一旦コメント化してください)
+//import '../widget/drawer_menu.dart';
+//////////////////////////////////////////////
 
 class Dictionary extends StatefulWidget {
   @override
@@ -45,6 +49,8 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
           tabs: tabs,
         ),
       ),
+      
+//////////////////////////////////////////////
       //メニューバー表示のために一旦設定
       //drawer: DrawerMenu(),
       //⑥TabBarが選ばれた際の挙動
@@ -53,10 +59,12 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
         children: tabs.map(
           (Tab tab) {
             //⑧tabsのテキストが入ってくるはずなので確認
-             Text(tab.text);
+             return Text(tab.text);
           },
         ).toList(),
       ),
+//////////////////////////////////////////////
+
     );
   }
 }

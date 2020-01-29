@@ -15,11 +15,14 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
     Tab(text: '和英'),
   ];
 
+//////////////////////////////////////////////
+  //③TabControllerにtabのlengthを設定する。
   @override
   void initState() {
-    //③TabControllerにtabのlengthを設定する。
     //vsyncでタブの状態を自インスタンスに設定する。
     tabController = TabController(vsync: this, length: tabs.length);
     super.initState();
   }
+//////////////////////////////////////////////
+
 }

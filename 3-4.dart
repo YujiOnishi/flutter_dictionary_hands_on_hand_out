@@ -23,10 +23,11 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
     super.initState();
   }
 
+//////////////////////////////////////////////
+  //‡CAppBar‚ğİ’è
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //‡CAppBar‚ğİ’è
       appBar: AppBar(
         title: Text("ƒ[ƒhˆê——"),
         actions: <Widget>[
@@ -40,4 +41,6 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
       ),
     );
   }
+//////////////////////////////////////////////
+
 }

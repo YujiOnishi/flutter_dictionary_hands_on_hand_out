@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widget/drawer_menu.dart';
+import './input.dart';
 //①importを追加
 import 'package:cloud_firestore/cloud_firestore.dart';
-import './input.dart';
 
 class Dictionary extends StatefulWidget {
   @override
@@ -32,7 +32,6 @@ class _Dictionary extends State<Dictionary>
           IconButton(
             icon: Icon(Icons.add_box),
             onPressed: () {
-              //②追加ボタンを押した際にinputFORMが表示される
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -53,10 +52,17 @@ class _Dictionary extends State<Dictionary>
           controller: tabController,
           children: tabs.map(
             (Tab tab) {
-              //③tabによって表示させる内容を変更する
+              //②tabによって表示させる内容を変更する
               return SingleChildScrollView(
                 child: Column(
-                  children: <Widget>[buildStreamBuilder(tab.text)],
+                  children: <Widget>[
+                  
+////////////////////////////
+                    //④コメントを外す
+                    buildStreamBuilder(tab.text)
+////////////////////////////
+
+                  ],
                 ),
               );
             },
@@ -66,7 +72,7 @@ class _Dictionary extends State<Dictionary>
     );
   }
 
-  //④tabの値によってfirestoreから取ってくる値を変更
+  //③tabの値によってfirestoreから取ってくる値を変更
   //Firebassの動作はflutterの本筋から外れるためハンズオンでは説明を省きます
   //詳細はコメントを参照してください
   Widget buildStreamBuilder(String tab) {
@@ -100,6 +106,20 @@ class _Dictionary extends State<Dictionary>
             return Text("Loading...");
           //正常接続時
           default:
+          
+///////////////////////////////////////////
+            //④表示デザインを整える
+            return Align(
+              alignment: Alignment.topCenter,
+              //複数Widgetが入るためColumn利用
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+              ),
+            );
+///////////////////////////////////////////
+
         }
       },
     );

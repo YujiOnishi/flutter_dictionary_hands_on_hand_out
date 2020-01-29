@@ -37,6 +37,8 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
             },
           ),
         ],
+        
+//////////////////////////////////////////////
         //⑤TabBarを配置する。
         bottom: TabBar(
           //managementとlengthの情報が入ったtabController
@@ -44,6 +46,8 @@ class _Dictionary extends State<Dictionary> with SingleTickerProviderStateMixin 
           //配列とリンクしている
           tabs: tabs,
         ),
+//////////////////////////////////////////////
+
       ),
     );
   }

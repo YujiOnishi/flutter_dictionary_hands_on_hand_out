@@ -31,6 +31,8 @@ class MyInputFormState extends State<InputForm> {
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
+            
+//////////////////////////////////////////////
               //④保存時処理
               //validate＆save(テキストフィールドのsave処理が走る)＆firestore保存処理
               if (formKey.currentState.validate()) {
@@ -43,6 +45,8 @@ class MyInputFormState extends State<InputForm> {
                   },
                 );
                 Navigator.pop(context);
+//////////////////////////////////////////////
+
               }
             },
           ),
@@ -50,8 +54,12 @@ class MyInputFormState extends State<InputForm> {
       ),
       body: SafeArea(
         child: Form(
+        
+//////////////////////////////////////////////
           //⑤formにkey設定
           key: formKey,
+//////////////////////////////////////////////
+
           child: ListView(
             padding: EdgeInsets.all(20.0),
             children: <Widget>[

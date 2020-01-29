@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widget/drawer_menu.dart';
+import './input.dart';
 //①importを追加
 import 'package:cloud_firestore/cloud_firestore.dart';
-import './input.dart';
 
 class Dictionary extends StatefulWidget {
   @override
@@ -32,7 +32,6 @@ class _Dictionary extends State<Dictionary>
           IconButton(
             icon: Icon(Icons.add_box),
             onPressed: () {
-              //②追加ボタンを押した際にinputFORMが表示される
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -53,7 +52,7 @@ class _Dictionary extends State<Dictionary>
           controller: tabController,
           children: tabs.map(
             (Tab tab) {
-              //③tabによって表示させる内容を変更する
+              //②tabによって表示させる内容を変更する
               return SingleChildScrollView(
                 child: Column(
                   children: <Widget>[buildStreamBuilder(tab.text)],
@@ -66,7 +65,7 @@ class _Dictionary extends State<Dictionary>
     );
   }
 
-  //④tabの値によってfirestoreから取ってくる値を変更
+  //③tabの値によってfirestoreから取ってくる値を変更
   //Firebassの動作はflutterの本筋から外れるためハンズオンでは説明を省きます
   //詳細はコメントを参照してください
   Widget buildStreamBuilder(String tab) {
@@ -100,7 +99,7 @@ class _Dictionary extends State<Dictionary>
             return Text("Loading...");
           //正常接続時
           default:
-            //⑤表示デザインを整える
+            //④表示デザインを整える
             return Align(
               alignment: Alignment.topCenter,
               //複数Widgetが入るためColumn利用
@@ -108,7 +107,7 @@ class _Dictionary extends State<Dictionary>
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
-                //⑥firestoreから取得した値を元にウィジェット作成
+                //⑤firestoreから取得した値を元にウィジェット作成
                 //List<DocumentSnapshot> documentsからDocumentSnapshotを一つずつ取り出して処理
                 children: snapshot.data.documents.map(
                   (DocumentSnapshot document) {
@@ -131,7 +130,7 @@ class _Dictionary extends State<Dictionary>
     );
   }
 
-//⑦個別のワードを表示
+//⑥個別のワードを表示
   Widget createWordTile(DocumentSnapshot document) {
     //connectionが正常でも翻訳が間に合わないケースがあるため
     if (document['translated'] == null) {
@@ -160,7 +159,7 @@ class _Dictionary extends State<Dictionary>
     }
   }
 
-  //⑧ボタンバーを表示
+  //⑦ボタンバーを表示
   //firestoreの機能のため説明は省きます
   //コメントを参照してください
   Widget createButtonBar(DocumentSnapshot document) {
