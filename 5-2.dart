@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-//‡@Form—p‚Ì\‘¢‘Ì‚ğ—pˆÓ
+//â‘ Formç”¨ã®æ§‹é€ ä½“ã‚’ç”¨æ„
 class FormData {
-  //type‚Ì‰Šú’l
+  //typeã®åˆæœŸå€¤
   String type = "en";
   String word = "";
 }
@@ -17,26 +17,26 @@ class InputForm extends StatefulWidget {
 class MyInputFormState extends State<InputForm> {
   FormData data = FormData();
 
+        
+//////////////////////////////////////////////
+        //â‘¡ä¿å­˜ç”¨ã®ãƒœã‚¿ãƒ³ã‚’è¨­å®š
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ƒ[ƒh“o˜^'),
-        
-//////////////////////////////////////////////
-        //‡A•Û‘¶—p‚Ìƒ{ƒ^ƒ“‚ğİ’è
+        title: Text('ãƒ¯ãƒ¼ãƒ‰ç™»éŒ²'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
-              //–{—ˆ•Û‘¶ˆ—‚ª“ü‚é‚Í‚¸‚¾‚ª¡‚Í‚Ü‚¾‰æ–Ê‚ğ•Â‚¶‚é‹@”\‚¾‚¯
+              //æœ¬æ¥ä¿å­˜å‡¦ç†ãŒå…¥ã‚‹ã¯ãšã ãŒä»Šã¯ã¾ã ç”»é¢ã‚’é–‰ã˜ã‚‹æ©Ÿèƒ½ã ã‘
               Navigator.pop(context);
             },
           ),
         ],
-//////////////////////////////////////////////
 
       ),
     );
   }
+//////////////////////////////////////////////
 }
