@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//‡@firestoreƒCƒ“ƒ|[ƒg
+//â‘ firestoreã‚¤ãƒ³ãƒãƒ¼ãƒˆ
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FormData {
@@ -15,10 +15,10 @@ class InputForm extends StatefulWidget {
 }
 
 class MyInputFormState extends State<InputForm> {
-  //‡Afirestore—p‚ÉƒŠƒtƒ@ƒŒƒ“ƒX—pˆÓ
+  //â‘¡firestoreç”¨ã«ãƒªãƒ•ã‚¡ãƒ¬ãƒ³ã‚¹ç”¨æ„
   DocumentReference mainReference =
       Firestore.instance.collection('dictionary').document();
-  //‡Bform—p‚Ìkey‚ğ—pˆÓ
+  //â‘¢formç”¨ã®keyã‚’ç”¨æ„
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   FormData data = FormData();
 
@@ -26,15 +26,15 @@ class MyInputFormState extends State<InputForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ƒ[ƒh“o˜^'),
+        title: Text('ãƒ¯ãƒ¼ãƒ‰ç™»éŒ²'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
             
 //////////////////////////////////////////////
-              //‡C•Û‘¶ˆ—
-              //validate•save(ƒeƒLƒXƒgƒtƒB[ƒ‹ƒh‚Ìsaveˆ—‚ª‘–‚é)•firestore•Û‘¶ˆ—
+              //â‘£ä¿å­˜æ™‚å‡¦ç†
+              //validateï¼†save(ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®saveå‡¦ç†ãŒèµ°ã‚‹)ï¼†firestoreä¿å­˜å‡¦ç†
               if (formKey.currentState.validate()) {
                 formKey.currentState.save();
                 mainReference.setData(
@@ -45,9 +45,9 @@ class MyInputFormState extends State<InputForm> {
                   },
                 );
                 Navigator.pop(context);
-//////////////////////////////////////////////
 
               }
+//////////////////////////////////////////////
             },
           ),
         ],
@@ -56,7 +56,7 @@ class MyInputFormState extends State<InputForm> {
         child: Form(
         
 //////////////////////////////////////////////
-          //‡Dform‚Ékeyİ’è
+          //â‘¤formã«keyè¨­å®š
           key: formKey,
 //////////////////////////////////////////////
 
@@ -66,7 +66,7 @@ class MyInputFormState extends State<InputForm> {
               RadioListTile(
                 value: "en",
                 groupValue: data.type,
-                title: Text("‰p˜a"),
+                title: Text("è‹±å’Œ"),
                 onChanged: (String value) {
                   setState(
                     () {
@@ -78,7 +78,7 @@ class MyInputFormState extends State<InputForm> {
               RadioListTile(
                 value: "ja",
                 groupValue: data.type,
-                title: Text("˜a‰p"),
+                title: Text("å’Œè‹±"),
                 onChanged: (String value) {
                   setState(
                     () {
@@ -90,7 +90,7 @@ class MyInputFormState extends State<InputForm> {
               TextFormField(
                 decoration: InputDecoration(
                   icon: Icon(Icons.library_books),
-                  hintText: 'ƒ[ƒh',
+                  hintText: 'ãƒ¯ãƒ¼ãƒ‰',
                   labelText: 'word',
                 ),
                 onSaved: (String value) {
@@ -98,7 +98,7 @@ class MyInputFormState extends State<InputForm> {
                 },
                 validator: (value) {
                   if (value.isEmpty) {
-                    return 'ƒ[ƒh‚Í•K{“ü—Í€–Ú‚Å‚·';
+                    return 'ãƒ¯ãƒ¼ãƒ‰ã¯å¿…é ˆå…¥åŠ›é …ç›®ã§ã™';
                   }
                   return null;
                 },
