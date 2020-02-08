@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-//‡@Form—p‚Ì\‘¢‘Ì‚ğ—pˆÓ
+//â‘ Formç”¨ã®æ§‹é€ ä½“ã‚’ç”¨æ„
 class FormData {
-  //type‚Ì‰Šú’l
+  //typeã®åˆæœŸå€¤
   String type = "en";
   String word = "";
 }
@@ -21,47 +21,47 @@ class MyInputFormState extends State<InputForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ƒ[ƒh“o˜^'),
-        //‡A•Û‘¶—p‚Ìƒ{ƒ^ƒ“‚ğİ’è
+        title: Text('ãƒ¯ãƒ¼ãƒ‰ç™»éŒ²'),
+        //â‘¡ä¿å­˜ç”¨ã®ãƒœã‚¿ãƒ³ã‚’è¨­å®š
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
             onPressed: () {
-              //–{—ˆ•Û‘¶ˆ—‚ª“ü‚é‚Í‚¸‚¾‚ª¡‚Í‚Ü‚¾‰æ–Ê‚ğ•Â‚¶‚é‹@”\‚¾‚¯
+              //æœ¬æ¥ä¿å­˜å‡¦ç†ãŒå…¥ã‚‹ã¯ãšã ãŒä»Šã¯ã¾ã ç”»é¢ã‚’é–‰ã˜ã‚‹æ©Ÿèƒ½ã ã‘
               Navigator.pop(context);
             },
           ),
         ],
       ),
       body: SafeArea(
-        //‡BForm‚ğİ’è
+        //â‘¢Formã‚’è¨­å®š
         child: Form(
-          //‡CForm‚Í•¡”ƒEƒBƒWƒFƒbƒg‚Ì‘g‚İ‡‚í‚¹‚È‚Ì‚ÅListView‚ğ—˜—p
+          //â‘£Formã¯è¤‡æ•°ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆã®çµ„ã¿åˆã‚ã›ãªã®ã§ListViewã‚’åˆ©ç”¨
           child: ListView(
             padding: EdgeInsets.all(20.0),
             children: <Widget>[
-              //‡D‰p˜a—pRadioƒ{ƒ^ƒ“
+              //â‘¤è‹±å’Œç”¨Radioãƒœã‚¿ãƒ³
               RadioListTile(
                 value: "en",
-                //data\‘¢‘Ì‚ğ—˜—p‚µ‚Ä˜a‰p‚Æó‘Ô‚ğ‹¤—L
+                //dataæ§‹é€ ä½“ã‚’åˆ©ç”¨ã—ã¦å’Œè‹±ã¨çŠ¶æ…‹ã‚’å…±æœ‰
                 groupValue: data.type,
-                //ƒ‰ƒWƒIƒ{ƒ^ƒ“‰¡‚É•\¦‚³‚ê‚éƒeƒLƒXƒg
-                title: Text("‰p˜a"),
+                //ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³æ¨ªã«è¡¨ç¤ºã•ã‚Œã‚‹ãƒ†ã‚­ã‚¹ãƒˆ
+                title: Text("è‹±å’Œ"),
                 onChanged: (String value) {
-                  //•ÏX‚ÌƒCƒxƒ“ƒg‹““®
+                  //å¤‰æ›´æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆæŒ™å‹•
                   setState(
                     () {
-                      //\‘¢‘Ì‚Ìtype‚Ì’l‚ğvalue(en)‚Éİ’è
+                      //æ§‹é€ ä½“ã®typeã®å€¤ã‚’value(en)ã«è¨­å®š
                       data.type = value;
                     },
                   );
                 },
               ),
-              //‡E˜a‰p—pRadioƒ{ƒ^ƒ“
+              //â‘¥å’Œè‹±ç”¨Radioãƒœã‚¿ãƒ³
               RadioListTile(
                 value: "ja",
                 groupValue: data.type,
-                title: Text("˜a‰p"),
+                title: Text("å’Œè‹±"),
                 onChanged: (String value) {
                   setState(
                     () {
@@ -72,24 +72,28 @@ class MyInputFormState extends State<InputForm> {
               ),
               
 //////////////////////////////////////////////
-              //‡Fƒ[ƒh“ü—Í—pƒeƒLƒXƒgƒtƒB[ƒ‹ƒh
+              //â‘¦ãƒ¯ãƒ¼ãƒ‰å…¥åŠ›ç”¨ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰
               TextFormField(
-                //ƒeƒLƒXƒgƒtƒB[ƒ‹ƒh‚ÌƒfƒRƒŒ[ƒVƒ‡ƒ“
+                //ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®ãƒ‡ã‚³ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³
                 decoration: InputDecoration(
                   icon: Icon(Icons.library_books),
-                  hintText: 'ƒ[ƒh',
+                  hintText: 'ãƒ¯ãƒ¼ãƒ‰',
                   labelText: 'word',
                 ),
-                //•Û‘¶‚ÌƒCƒxƒ“ƒg‹““®
-                onSaved: (String value) {
-                  data.word = value;
+                //ä¿å­˜æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆæŒ™å‹•
+                onSaved: (String value) {                  
+                  setState(
+                    () {
+                      data.word = value;
+                    },
+                  );
                 },
-                //ƒoƒŠƒf[ƒVƒ‡ƒ“‚Ì‹““®
+                //ãƒãƒªãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³æ™‚ã®æŒ™å‹•
                 validator: (value) {
                   if (value.isEmpty) {
-                    return 'ƒ[ƒh‚Í•K{“ü—Í€–Ú‚Å‚·';
+                    return 'ãƒ¯ãƒ¼ãƒ‰ã¯å¿…é ˆå…¥åŠ›é …ç›®ã§ã™';
                   }
-                  //ƒoƒŠƒf[ƒVƒ‡ƒ“ƒNƒŠƒA‚Ì‚Æ‚«‚Íreturn null‚µ‚È‚¢‚Æƒ[ƒjƒ“ƒO
+                  //ãƒãƒªãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¯ãƒªã‚¢ã®ã¨ãã¯return nullã—ãªã„ã¨ãƒ¯ãƒ¼ãƒ‹ãƒ³ã‚°
                   return null;
                 },
                 initialValue: data.word,
